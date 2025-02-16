@@ -1,0 +1,24 @@
+{{template "base" .}}
+
+{{define "content"}}
+ <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>This is the about page</h1>
+
+                <p> this came from template: {{index .StringMap "test"}}</p>
+
+
+                <p>
+
+                {{if ne (index .StringMap "remote_ip") ""}}
+                    Your  remote IP address is {{index .StringMap "remote_ip"}}
+                {{else}}
+                    Your remote IP address is unknown yet. Visit this <a href="/">Home Page</a> again to get it.
+                {{end}}
+                </p>
+            </div>
+        </div>
+    </div> <!-- Fixed missing closing div tag -->
+
+{{end}}
